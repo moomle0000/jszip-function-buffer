@@ -21,6 +21,40 @@ const file = await zip.file(folder[0]).async("nodebuffer")
 const data = await file.toString()
 
 ```
+
+get data from url zip file
+
+```javascript
+async function downloadFile(url) {
+    const response = await fetch(url);
+
+    const data = await response.arrayBuffer();
+
+    return data
+
+}
+
+```
+
+function get data text file or other file extract from zip file
+
+```javascript
+async function jszipe(buffer){
+    const zip = await jszip.loadAsync(buffer)
+
+    const folder = await Object.keys(zip.files)
+
+    const file = await zip.file(folder[0]).async("nodebuffer")
+
+    const data = await file.toString()
+    return data;
+}
+
+}
+
+```
+
+
 License
 -------
 
