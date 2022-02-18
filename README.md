@@ -16,7 +16,6 @@ const folder = await Object.keys(zip.files)
 const file = await zip.file(folder[0]).async("nodebuffer")
 
 const data = await file.toString()
-return data;
 
 ```
 License
