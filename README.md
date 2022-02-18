@@ -50,7 +50,6 @@ async function jszipe(buffer){
     return data;
 }
 
-}
 
 ```
 
