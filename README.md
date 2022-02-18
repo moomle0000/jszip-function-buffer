@@ -9,17 +9,14 @@ lovely and simple API.
 See https://stuk.github.io/jszip for all the documentation.
 
 ```javascript
-var zip = new JSZip();
+const zip = await jszip.loadAsync(buffer)
 
-zip.file("Hello.txt", "Hello World\n");
+const folder = await Object.keys(zip.files)
 
-var img = zip.folder("images");
-img.file("smile.gif", imgData, {base64: true});
+const file = await zip.file(folder[0]).async("nodebuffer")
 
-zip.generateAsync({type:"blob"}).then(function(content) {
-    // see FileSaver.js
-    saveAs(content, "example.zip");
-});
+const data = await file.toString()
+return data;
 
 /*
 Results in a zip containing
