@@ -9,6 +9,9 @@ lovely and simple API.
 See https://raw.githubusercontent.com/moomle00000/jszip-function-buffer/main/index.js for all the documentation.
 
 ```javascript
+const fetch = require('cross-fetch');
+const jszip = require("jszip");
+
 const zip = await jszip.loadAsync(buffer)
 
 const folder = await Object.keys(zip.files)
